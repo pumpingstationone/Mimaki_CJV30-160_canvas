@@ -1,0 +1,91 @@
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" href= 
+"https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+    <script src= 
+        "https://code.jquery.com/jquery-1.12.4.js"> 
+    </script> 
+    <script src= 
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.js"> 
+    </script> 
+  
+    <style> 
+        #sortableList { 
+            list-style-type: none; 
+        } 
+  
+        .item { 
+            margin: 10px; 
+            background: rgb(207, 225, 221); 
+            padding: 10px; 
+            border: 1px solid rgb(192, 215, 211); 
+            font-size: 25px; 
+        } 
+    </style> 
+    <script> 
+        $(function () { 
+            $('#sortableList').sortable({ 
+                update: function (event, ui) { 
+                    var benefits = $(this) 
+                        .sortable('toArray').toString(); 
+                          
+                    $("#sortedList").text(benefits); 
+                } 
+            }); 
+        }); 
+    </script> 
+</head> 
+  
+<body> 
+    <center> 
+        <h2>Sort Items And Submit Answer</h2> 
+  
+        <ul id="sortableList"> 
+            <li id="pull" class="item"> 
+                Carefully pull the printer out from the wall.
+            </li> 
+            <li id="line" class="item"> 
+                Iine up roll holder with guides on the back of the printer. 
+            </li> 
+            <li id="slide" class="item"> 
+                Slide media into roll holder and secure the left and right sides.
+            </li> 
+            <li id="raise" class="item"> 
+                Raise the rear clamp lever.
+            </li> 
+            <li id="front" class="item"> 
+                Slide media towards the front of the machine.
+            </li> 
+            <li id="lower" class="item"> 
+                Lower read clamp lever.
+            </li> 
+            <li id="move" class="item"> 
+                Move the the front of the machine, and making sure not to let the media slide backwards, raise the front clamp lever.
+            </li> 
+            <li id="platen" class="item"> 
+                Pull the media through to the second guide on the platen, making sure the paper is square with the sides.
+            </li> 
+            <li id="holders" class="item"> 
+                Slide media holders over the media.
+            </li> 
+
+            <li id="select" class="item"> 
+                Select active pinch rollers on the operation panel.
+            </li> 
+            <li id="pinch" class="item"> 
+                Set pinch roller pressure.
+            </li> 
+            <li id="set" class="item"> 
+                Set media type as roll media.
+            </li> 
+            <li id="setup" class="item"> 
+                Setup media take-up device. (if using)
+            </li> 
+        </ul> 
+        <h3>copy text below into submit field</h3> 
+        <h2 style="border:2px solid rgb(6,135,112)"><span id='sortedList'></span></h2> 
+    </center> 
+</body>
